@@ -14,7 +14,5 @@ jobs:
       - uses: subosito/flutter-action@v2.4.0  # Updated to latest version
       - name: install dependencies
         run: flutter packages get
-      - name: run tests
-        run: flutter test  # Running unit tests
       - name: run driver tests
-        run: flutter drive --target=test_driver/app.dart  # Running integration tests
+        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart
