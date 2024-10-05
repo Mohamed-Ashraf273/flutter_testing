@@ -17,4 +17,4 @@ jobs:
       - name: install dependencies
         run: flutter packages get
       - name: run driver tests on Linux
-        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart -d linux
+        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart
