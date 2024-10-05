@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v2.4.0  # Use the Flutter action
+      - uses: subosito/flutter-action@v2.4.0  # Flutter action
       - name: install dependencies
         run: flutter packages get
-      - name: run driver tests
-        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart -d windows
+      - name: run driver tests on Chrome
+        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart -d chrome
