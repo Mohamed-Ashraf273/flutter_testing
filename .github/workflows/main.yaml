@@ -1,4 +1,4 @@
-name: test_driver
+name: test
 
 on: pull_request
 
