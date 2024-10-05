@@ -1,11 +1,23 @@
+name: test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
 jobs:
   test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - name: Install Flutter
-        uses: subosito/flutter-action@v2.4.0
+        uses: subosito/flutter-action@v2.4.0  # Flutter action
+      - name: Install Dependencies
+        run: |
+          choco install ninja -y
+          choco install gtk-runtime -y
       - name: Install Flutter Packages
-        run: flutter packages get
+        run: flutter pub get
       - name: Run Driver Tests on Windows
-        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart -d windows 
+        run: flutter drive --target=test_driver/app.dart --driver=test_driver/test.dart -d windows --verbose
